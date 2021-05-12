@@ -115,9 +115,9 @@ public class Client {
 
         String phoneNumber = null;
         while (true) {
-            PhoneBook phoneBook = phoneBookManager.checkNumber(inputString());
-            if (phoneBook != null) {
-                phoneNumber = phoneBook.getPhoneNumber();
+            phoneNumber = inputString();
+            PhoneBook phoneBook = phoneBookManager.checkNumber(phoneNumber);
+            if (phoneBook == null) {
                 break;
             } else{
                 System.out.println("Số Điện Thoại Không Được Trùng Vui Lòng Nhập LẠI");
@@ -180,7 +180,7 @@ public class Client {
     private static String testFormatGender() {
         String gender;
         String maleGender = "Nam";
-        String femaleGender = "Nữ";
+        String femaleGender = "Nu";
         while (true) {
             gender = inputString();
             if (gender.equalsIgnoreCase(maleGender)) {
